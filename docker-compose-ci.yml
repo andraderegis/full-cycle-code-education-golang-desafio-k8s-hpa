@@ -1,0 +1,14 @@
+version: '3.7'
+
+services:
+    golang_desafio_k8s:
+        build: 
+            context: .
+            dockerfile: Dockerfile-ci
+        container_name: go-hpa
+        volumes:
+            - .:/go-k8s
+        expose:
+            - "8080"
+        ports: 
+            - "8080:8080"
