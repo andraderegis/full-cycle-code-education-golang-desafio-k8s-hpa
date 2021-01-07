@@ -1,0 +1,14 @@
+steps:
+  - id: "Running Docker Compose"
+    name: docker/compose
+    args: ['-f', 'docker-compose-ci.yml', 'up', '-d']
+  - id: "Running Unit Tests"
+    name: docker
+    args: ['exec', '-t', 'go-hpa', 'go', 'test', './...']
+  - id: 'Build and Push Image'
+    name: docker
+    args: ['build', '-t', 'gcr.io/$PROJECT_ID/${_GOLANG_FULLCYCLE_DESAFIO_K8S_HPA_NAME}', '.']
+substitutions:
+  _GOLANG_FULLCYCLE_DESAFIO_K8S_HPA_NAME: 'go-hpa:${_GOLANG_FULLCYCLE_DESAFIO_K8S_HPA_VERSION}'
+  _GOLANG_FULLCYCLE_DESAFIO_K8S_HPA_VERSION: 1.0.0
+images: ['gcr.io/$PROJECT_ID/${_GOLANG_FULLCYCLE_DESAFIO_K8S_HPA_NAME}']
