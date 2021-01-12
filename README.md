@@ -21,7 +21,8 @@ docker run -p 8080:8080 andradereginaldo/go-hpa
 </br>
 
 # GCP
-Pull request com integração o GCP: [full-cycle-code-education-golang-desafio-k8s-hpa](https://github.com/andraderegis/full-cycle-code-education-golang-desafio-k8s-hpa/pull/1)
+Pull request com CI via GCP: [full-cycle-code-education-golang-desafio-k8s-hpa](https://github.com/andraderegis/full-cycle-code-education-golang-desafio-k8s-hpa/pull/1)
+Pull request com CI/CD via GCP: [full-cycle-code-education-golang-desafio-k8s-hpa](https://github.com/andraderegis/full-cycle-code-education-golang-desafio-k8s-hpa/pull/2)
 
 
 
