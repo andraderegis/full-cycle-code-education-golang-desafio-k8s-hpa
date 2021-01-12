@@ -28,8 +28,6 @@ steps:
     env:
       - '${_CLOUDSDK_COMPUTE_ZONE}'
       - '${_CLOUDSDK_CONTAINER_CLUSTER}'
-      # - 'CLOUDSDK_COMPUTE_ZONE=us-central1-c'
-      # - 'CLOUDSDK_CONTAINER_CLUSTER=code-education-devops-golang'
   - id: 'Startup K8S Service'
     name: 'gcr.io/cloud-builders/kubectl'
     args: 
@@ -39,8 +37,6 @@ steps:
     env:
       - '${_CLOUDSDK_COMPUTE_ZONE}'
       - '${_CLOUDSDK_CONTAINER_CLUSTER}'
-      # - 'CLOUDSDK_COMPUTE_ZONE=us-central1-c'
-      # - 'CLOUDSDK_CONTAINER_CLUSTER=code-education-devops-golang'
   - id: 'Startup K8S HPA'
     name: 'gcr.io/cloud-builders/kubectl'
     args: 
@@ -50,8 +46,6 @@ steps:
     env:
       - '${_CLOUDSDK_COMPUTE_ZONE}'
       - '${_CLOUDSDK_CONTAINER_CLUSTER}'
-      # - 'CLOUDSDK_COMPUTE_ZONE=us-central1-c'
-      # - 'CLOUDSDK_CONTAINER_CLUSTER=code-education-devops-golang'
 substitutions:
   _GOLANG_FULLCYCLE_DESAFIO_K8S_HPA_NAME: 'go-hpa'
   _CLOUDSDK_COMPUTE_ZONE: 'CLOUDSDK_COMPUTE_ZONE=us-central1-c'
