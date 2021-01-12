@@ -28,7 +28,15 @@ steps:
     env:
       - 'CLOUDSDK_COMPUTE_ZONE=us-central1-c'
       - 'CLOUDSDK_CONTAINER_CLUSTER=code-education-devops-golang'
-
+  - id: 'Startup K8S Service'
+    name: 'gcr.io/cloud-builders/kubectl'
+    args: 
+      - 'apply'
+      - 'f'
+      - 'service.yaml'
+    env:
+      - 'CLOUDSDK_COMPUTE_ZONE=us-central1-c'
+      - 'CLOUDSDK_CONTAINER_CLUSTER=code-education-devops-golang'
 substitutions:
   _GOLANG_FULLCYCLE_DESAFIO_K8S_HPA_NAME: 'go-hpa'
 images: ['gcr.io/$PROJECT_ID/${_GOLANG_FULLCYCLE_DESAFIO_K8S_HPA_NAME}']
