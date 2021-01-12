@@ -27,7 +27,7 @@ steps:
       - 'deployment.prod.yaml'
     env:
       - 'CLOUDSDK_COMPUTE_ZONE=us-central1-c'
-      - 'CLOUDSDK_CONTAINER_CLUSTER=code-education-devops'
+      - 'CLOUDSDK_CONTAINER_CLUSTER=code-education-devops-golang'
 
 substitutions:
   _GOLANG_FULLCYCLE_DESAFIO_K8S_HPA_NAME: 'go-hpa'
